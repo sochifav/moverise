@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIERISE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .d-block{
+        object-fit: cover;
+    }
+    .carousel-caption{
+        text-align: start;
+        left: 6%;
+        bottom: 0%;
+    }
+   .carousel-control-prev{
+       width: 9%;
+   }
+    .link{
+        font-size: 18px;
+        text-decoration: none;
+        color: rgb(194, 186, 186);
+        padding: 7px;
+    }
+    .link:hover{
+        color: white;
+        text-decoration: none;
+    }
+    h1{
+        color: white;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 500;
+        font-size: 50px;
+        margin-bottom: 0px;
+    }
+    .fas{
+        font-size: 27px;
+        margin-top: 19px;
+    }
+    .fas:hover{
+        color: #09AFE3;
+    }
+    .checked{
+        color: #09AFE3;
+    }
+    .fa-btn{
+        font-size: 14px;
+        background-color: transparent;
+        border: #09AFE3 solid 2px;
+        border-radius: 4px;
+        color: #09AFE3;
+        margin: 5px;
+    }
+    span{
+        font-size: 28px;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 200;
+
+    }
+    .logo{
+        color: white;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 800;
+        font-size: 28px;
+        position: absolute;
+        padding: 100px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+    .placeicon{
+        font-family: fontawesome, 'Ubuntu', sans-serif ;
+        font-weight: 500;
+        color: white;
+        font-size: 16px;
+        padding-right: 15px;
+        letter-spacing: 0.6px;
+    }
+    .placeicon:hover{
+        text-decoration: none;
+        color: #09AFE3;
+    }
+    .nav1{
+        position: absolute;
+        right: 12%;
+        top: 3%;
+        display: block;
+    }
+    .btn-primary{
+        padding-right: 15px;
+        padding-right: 15px;
+        background-color: #09AFE3;
+        border: none;
+        border-radius: 6px;
+    }
+    .btn-primary:hover{
+        background-color: #8ee2fc;
+        border: none;
+
+    }
+    .move-btn{
+        position: relative;
+        left: 78%;
+        bottom: 49px;
+    }
+    .btn-outline-primary{
+        border: white solid 2px;
+        color: white;
+        margin: 10px;
+    }
+    .btn-outline-primary:hover{
+        background-color: #8ee2fc;
+        border: #8ee2fc;
+    }
+    .nav-tabs{
+        margin: 10px;
+        margin-left: 80px;
+        margin-right: 80px;
+    } 
+    #flex1{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        padding-left: 20px;
+        margin: 60px;
+        margin-top: 18px;
+        margin-bottom: 10px;   
+        overflow: hidden;
+    }
+    .downer{
+        font-size: 16px;
+        margin: 0px;
+    }
+    .first1{
+        margin: 10px;
+        box-shadow: 0px 3px 9px 0px rgb(184, 181, 181);
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    h5, h6{
+        padding: 10px;
+        padding-bottom: 0px;
+        padding-top: 5px;
+    }
+    h6{
+        color: #09AFE3;
+    }
+    p{
+        margin-left: 60px;
+    }
+    .btn-primary-sec{
+        border: solid #BFDEFF;
+        border-radius: 13px;
+        box-shadow: 0px 0px 3px grey
+    }
+    .btn-primary-sec:hover{
+        box-shadow:  0px 8px 10px rgb(139, 139, 245);
+    }
+    .genre{
+        border-radius: 10px;
+    }
+    .namee{
+        padding-top: 8px;
+        color: #0c627c;
+    }
+    .namee:hover{
+        color: #09AFE3;
+    }
+
+
+
+
+
+    /* MEDIA QUERIES */ 
+    @media screen and (min-width: 2560px){
+        .nav.tabs{
+            margin-left: 90px;
+        }
+        #flex1{
+            margin: 200px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            margin-left: 110px;
+            margin-right: 270px;
+        }
+        .mov-img{
+            width: 380px;
+            height: 280px;
+        }
+        .nav-link{
+            font-size: 25px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-left: 40px;
+        }
+        .nav-tabs{
+            margin-right: 300px;
+        }.mov-img{
+            object-fit: cover;
+        }
+    }
+    @media screen and (max-width: 1440px){
+        #flex1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        
+    }
+    @media screen and (max-width: 1024px){
+        .move-btn{
+            position: relative;
+            left: 500px;
+        }
+        #flex1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .first1{
+            width: 250px;
+            height: 300px;
+        }
+        .mov-img{
+            object-fit: cover;
+            width: 250px;
+        }
+        
+
+    }
+    @media screen and (max-width: 786px){
+        .move-btn{
+            display: none;
+        }
+        #flex1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+    }
+    @media screen and (max-width: 553px){
+        .logo{
+            padding: 30px;
+            padding-top: 8px;
+            padding-bottom: 0px;
+        }
+        #flex1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    @media screen and (max-width: 425px){
+        .nav{
+            display: table-cell !important;
+        }
+        .d-block{
+            object-fit: cover;
+            height: 250px;
+        }
+        .carousel-control-next{
+            width: 24.3px;
+        }
+        .nav1{
+            display: none !important;
+        }
+        #flex1{
+            overflow: none;
+            margin: 0px;
+            padding: 0px;
+           
+        }
+        .mov-img{
+            width: 185px;
+            height: 125px;
+            object-fit: contain;
+        }
+        .first1{
+            width: 185px;
+            height: 250px;
+        }
+        
+    }
+    @media screen and (max-width: 375px){
+        .mov-img{
+            width: 160px;
+            height: 85px;
+        }
+        #flex1{
+            overflow: none;
+            margin: 0px;
+            padding: 0px;
+           
+        }
+        .first1{
+            width: 160px;
+            height: 200px;
+        }
+        .nav{
+            display: flex !important;
+        }
+        h5, h6{
+            font-size: 16px;
+        }
+    }
+    @media screen and (max-width: 320px){
+        .nav{
+            display: table-cell !important;
+        }
+        .mov-img{
+            width: 110px;
+            height: 85px;
+        }
+        #flex1{
+            overflow: none;
+            margin: 25px;
+            padding: 0px;
+           
+        }
+        .first1{
+            width: 110px;
+            height: 190px;
+        }
+        h5, h6{
+            font-size: 14px;
+        }
+        .fa-btn{
+            display: none;
+        }
+        p{
+            margin: 0px;
+            margin-bottom: 1rem;
+            margin-left: 30px
+        }
+        
+    }
+
+
+
+</style>
+<body>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h1 class="logo">MOVIE<span>RISE</span></h1>
+            <div class="nav1">
+                <a class="placeicon" href="#" role="button"> &#xf002;</a>
+                <a class="placeicon" href="signinmovie.html" role="button">Sign In</a>
+                <a class="btn btn-primary" href="signupmovie.html" role="button">Sign Up</a>
+            </div>
+            <img src="./pictures/jungle-book-cover.jpg" class="d-block w-100" alt="img" height="495">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>THE JUNGLE BOOK</h1>
+              <a href="#" class="link">Adventure</a>
+               <a href="#" class="link">Drama</a>
+               <a href="#" class="link">Family</a>
+               <a href="#" class="link">Fantasy</a>
+               <a href="#" class="link">| 1hr 46m</a> 
+               <div>
+                <span class="fas fa-star checked"></span>
+                <span class="fas fa-star checked"></span>
+                <span class="fas fa-star checked"></span>
+                <span class="fas fa-star checked"></span>
+                <span class="fas fa-star"></span>
+                <button class="fa-btn">4.0</button> </div>
+                <div class="move-btn">
+                    <a href="https://www.youtube.com/embed/C4qgAaxB_pc"> 
+                      <button type="button" class="btn btn-primary">Watch Now </button> </a>
+                    <button type="button" class="btn btn-outline-primary">View Info</button>
+                    <a href="#" class="placeicon">+ Favorite</a>
+                    <a href="#" class="placeicon"><i class="fas fa-ellipsis-v"></i></a>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h1 class="logo">MOVIE<span>RISE</span></h1>
+            <div class="nav1">
+                <a class="placeicon" href="#" role="button"> &#xf002;</a>
+                <a class="placeicon" href="signinmovie.html" role="button">Sign In</a>
+                <a class="btn btn-primary" href="signupmovie.html" role="button">Sign Up</a>
+            </div>
+            <img src="./pictures/fan-beast.jpg" class="d-block w-100" alt="img2" height="495">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h1 class="logo">MOVIE<span>RISE</span></h1>
+            <div class="nav1">
+                <a class="placeicon" href="#" role="button"> &#xf002;</a>
+                <a class="placeicon" href="signinmovie.html" role="button">Sign In</a>
+                <a class="btn btn-primary" href="signupmovie.html" role="button">Sign Up</a>
+            </div>
+            <img src="./pictures/nysm2.jpg" class="d-block w-100" alt="..." height="495">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+       <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#trend" role="tab" aria-controls="home" aria-selected="true">Trending</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#rated" role="tab" aria-controls="profile" aria-selected="false">Top Rated</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#arrivals" role="tab" aria-controls="contact" aria-selected="false">New Arrivals</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="trailers-tab" data-toggle="tab" href="#trailers" role="tab" aria-controls="trailers" aria-selected="false">Trailers</a>  
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="soon-tab" data-toggle="tab" href="#soon" role="tab" aria-controls="soon" aria-selected="false">Coming Soon</a>  
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="genre-tab" data-toggle="tab" href="#genre" role="tab" aria-controls="genre" aria-selected="false">Genre <i class="fas fa-angle-down downer"></i></a>  
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="trend" role="tabpanel" aria-labelledby="trend-tab">
+                 <div id="flex1">
+                     <div class="first1">
+                         <img class="mov-img" src="./pictures/mov-img1.jpg" alt="img" width="265" height="178">
+                         <a href="./movie/Fantastic.Beasts.and.Where.to.Find.Them.2016.1080p.BRRip.x264.AAC-ETRG.mp4"><h5 style="color: black;">FANTASTIC BEASTS...   
+                            <button class="fa-btn">4.0</button>  </h5>
+                         <h6>Adventure, Family, Fantasy</h6> </a>
+                     </div>
+                     <div class="first1">
+                         <img class="mov-img" src="./pictures/mov-img2.jfif" alt="img" width="264" height="175">
+                         <h5>ASSASINS CREED &nbsp; &nbsp;   
+                            <button class="fa-btn">4.2</button>  </h5>
+                         <h6>Action, Adventure, Fantasy</h6>
+                     </div>
+                     <div class="first1">
+                         <img class="mov-img" src="./pictures/mov-img3.png" alt="img" width="252" height="180">
+                         <h5>NOW YOU SEE ME 2   
+                            <button class="fa-btn">4.4</button>  </h5>
+                         <h6>Adventure, Fantasy, Comedy</h6>
+                     </div>
+                     <div class="first1">
+                         <img class="mov-img" src="./pictures/mov-img4.jfif" alt="img" width="265" height="178">
+                         <h5>LEGEND OF TARZ.. &nbsp;   
+                            <button class="fa-btn">4.3</button>  </h5>
+                         <h6>Adventure, Action, Drama</h6>
+                     </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img23.jfif" alt="img" width="275" height="178">
+                        <h5>THE BEAUTY AND TH..
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Adventure, Fantasy, Drama</h6>
+                    </div>
+                   
+
+
+                 </div>
+            </div>
+
+            <div class="tab-pane fade" id="rated" role="tabpanel" aria-labelledby="rated-tab">
+                <div id="flex1">
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img5.jpg" alt="img" width="265" height="178">
+                        <h5>DOCTOR STRAN.. &nbsp; &nbsp;   
+                           <button class="fa-btn">4.0</button>  </h5>
+                        <h6>Adventure, Action, Fantasy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img6.jpg" alt="img" width="264" height="170">
+                        <h5>CAPTAIN AMERICA... &nbsp;   
+                           <button class="fa-btn">4.2</button>  </h5>
+                        <h6>Action, Adventure, Sci-fi</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img7.png" alt="img" width="265" height="180">
+                        <h5>ALICE THROUGH ...   
+                           <button class="fa-btn">4.4</button>  </h5>
+                        <h6>Adventure, Fantasy, Comedy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img8.jpg" alt="img" width="265" height="178">
+                        <h5>FINDING DORY &nbsp; &nbsp; &nbsp;   
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Animation, Drama, Comedy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img22.jpg" alt="img" width="265" height="178">
+                        <h5> MALEFICIENT  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Adventure, Fantasy, Drama</h6>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="tab-pane fade" id="arrivals" role="tabpanel" aria-labelledby="arrival-tab">
+                <div id="flex1">
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img9.jpeg" alt="img" width="265" height="178">
+                        <h5>THE BIG FRIENDLY...  
+                           <button class="fa-btn">4.0</button>  </h5>
+                        <h6>Adventure, Family, Fantasy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img10.png" alt="img" width="264" height="175">
+                        <h5>INDEPENDENCE DAY  &nbsp;   
+                           <button class="fa-btn">4.2</button>  </h5>
+                        <h6>Action, Sci-fi</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img11.jpg" alt="img" width="264" height="180">
+                        <h5>ICE AGE: COLLISIO.. &nbsp; &nbsp;   
+                           <button class="fa-btn">4.4</button>  </h5>
+                        <h6>Adventure, Comedy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img12.png" alt="img" width="265" height="180">
+                        <h5>MOANA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Animation, Comedy </h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img21.jfif" alt="img" width="265" height="178">
+                        <h5>NUTCRACKER AND T.   
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Adventure, Fantasy, Drama</h6>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="tab-pane fade" id="trailers" role="tabpanel" aria-labelledby="trailers-tab">
+                <div id="flex1">
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img13.jpg" alt="img" width="285" height="185">
+                        <h5>AVENGERS: ENDGAME..  
+                           <button class="fa-btn">5.0</button>  </h5>
+                        <h6>Adventure, Sci-fi, Fantasy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img14.jpg" alt="img" width="285" height="185">
+                        <h5> X-MEN: DARK PHOEN...  &nbsp;   
+                           <button class="fa-btn">4.5</button>  </h5>
+                        <h6>Action, Sci-fi</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img15.webp" alt="img" width="265" height="178">
+                        <h5> MULAN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    
+                           <button class="fa-btn">4.4</button>  </h5>
+                        <h6>Adventure, Action, Drama</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img16.jpg" alt="img" width="265" height="180">
+                        <h5>LUPT  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Horror, Fantasy </h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img24.jpg" alt="img" width="265" height="178">
+                        <h5>INTO THE WOODS... &nbsp;   
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Adventure, Fantasy, Drama</h6>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="soon" role="tabpanel" aria-labelledby="soon-tab">
+                <div id="flex1">
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img17.jpg" alt="img" width="265" height="180">
+                        <h5>CAPTAIN MARVEL   &nbsp;  &nbsp;
+                           <button class="fa-btn">4.0</button>  </h5>
+                        <h6>Adventure, Sci-fi, Fantasy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img18.jpg" alt="img" width="284" height="180">
+                        <h5>THE HOUSE WITH A C.    
+                           <button class="fa-btn">4.2</button>  </h5>
+                        <h6>Adventure, Fantasy, Comedy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img19.jfif" alt="img" width="265" height="180">
+                        <h5>ALLADIN THE MOV.. &nbsp; &nbsp;      
+                           <button class="fa-btn">4.4</button>  </h5>
+                        <h6>Adventure, Comedy, Fantasy</h6>
+                    </div>
+                    <div class="first1">
+                        <img class="mov-img" src="./pictures/img20.jpg" alt="img" width="265" height="180">
+                        <h5> TOY STORY 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+                           <button class="fa-btn">4.3</button>  </h5>
+                        <h6>Animation, Comedy, Drama </h6>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="tab-pane fade" id="genre" role="tabpanel" aria-labelledby="genre-tab">
+            
+              <p>
+                <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <img class="genre" src="./pictures/action-img.jpg" alt="img" width="220" height="150">
+                   <h3 class="namee">Action</h3>
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    Action film is a film genre in which the protagonist or protagonists are thrust into a series of events
+                     that typically include violence, extended fighting, physical feats and frantic chases.
+                  </div>
+                </div>
+
+                <p>
+                    <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#second" aria-expanded="false" aria-controls="collapseExample">
+                        <img class="genre" src="./pictures/comedy-img.jfif" alt="img" width="220" height="150">
+                        <h3 class="namee">Comedy</h3>
+                      </button>
+                    </p>
+                    <div class="collapse" id="second">
+                      <div class="card card-body">
+                        A comedy film is a category of film in which the main emphasis is on humor. 
+                        These films are designed to make the audience laugh through amusement and most often work 
+                        by exaggerating characteristics for humorous effect. Films in this style traditionally have 
+                        a happy ending.
+                      </div>
+                    </div>
+
+                    <p>
+                        <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#horror" aria-expanded="false" aria-controls="collapseExample">
+                            <img class="genre" src="./pictures/horr-img.jpg" alt="img" width="220" height="140">
+                            <h3 class="namee">Horror</h3>
+                          </button>
+                    </p>
+                        <div class="collapse" id="horror">
+                          <div class="card card-body">
+                            A horror film is one that seeks to elicit fear in its audience, for entertainment purposes. 
+                            Initially inspired by literature from authors such as Edgar Allan Poe, Bram Stoker, and
+                             Mary Shelley, horror has existed as a film genre for more than a century. The macabre and the 
+                             supernatural are frequent themes.
+                          </div>
+                        </div>
+
+
+                    <p>
+                        <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#third" aria-expanded="false" aria-controls="collapseExample">
+                            <img class="genre" src="./pictures/adventure-img.jfif" alt="img" width="220" height="150">
+                            <h3 class="namee">Adventure</h3>
+                          </button>
+                    </p>
+                        <div class="collapse" id="third">
+                          <div class="card card-body">
+                            Adventure films are a genre of film whose plots feature elements of travel. 
+                            They typically involve protagonists who must leave their home or place of comfort and 
+                            go to far away lands to fulfill a goal. Settings play an important role in Adventure films,
+                             sometimes as big as the characters themselves.
+                          </div>
+                        </div>
+
+                    
+                  <p>
+                      <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#fourth" aria-expanded="false" aria-controls="collapseExample">
+                         <img class="genre" src="./pictures/fantasy-img.jfif" alt="img" width="220" height="160">
+                            <h3 class="namee">Fantasy</h3>
+                     </button>
+                  </p>
+                      <div class="collapse" id="fourth">
+                        <div class="card card-body">
+                            Fantasy films are films that belong to the fantasy genre with fantastic themes, 
+                            usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds. 
+                            The genre is considered a form of speculative fiction alongside science fiction films and 
+                            horror films, although the genres do overlap.
+                  </div>
+                     </div>
+
+                     <p>
+                        <button class="btn btn-primary-sec" type="button" data-toggle="collapse" data-target="#fifth" aria-expanded="false" aria-controls="collapseExample">
+                            <img class="genre" src="./pictures/music-img.jfif" alt="img" width="220" height="150">
+                            <h3 class="namee">Music</h3>
+                          </button>
+                    </p>
+                        <div class="collapse" id="fifth">
+                          <div class="card card-body">
+                            Music is an art form, and cultural activity, whose medium is sound.
+                             General definitions of music include common elements such as pitch, rhythm, dynamics, 
+                             and the sonic qualities of timbre and texture. Different styles or types of music may 
+                             emphasize, de-emphasize or omit some of these elements.
+                          </div>
+                        </div>
+
+                    
+                    
+            
+
+
+
+            </div>
+          </div>
+       </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>   
+</body>
+</html>
